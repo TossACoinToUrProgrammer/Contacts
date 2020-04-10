@@ -1,13 +1,98 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+  /* border:1px red solid; */
+}
+.header {
+  background-color: #212121;
+  height: 67px;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding-left: 27px;
+  margin-bottom: 50px;
+}
+.header__img {
+  width: 32px;
+  height: 32px;
+}
+.header__title {
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  color: #fff;
+  margin-left: 9px;
+}
+.contacts {
+  max-width: 1440px;
+  margin: auto;
+}
+.contacts__list {
+  margin: auto;
+  max-width: 1155px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.card {
+  width: 250px;
+  height: 303px;
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.25);
+  border-radius: 4px;
+  margin-bottom: 42px;
+  overflow: hidden;
+}
+.card__img {
+  height: 134px;
+  width: 100%;
+}
+.card__info {
+  padding-left: 9px;
+  padding-right: 9px;
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.card__info-mini {
+  font-size: 13px;
+  line-height: 15px;
+  text-align: left;
+  display: flex;
+  flex-flow: column;
+}
+.card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 23px;
+  margin-bottom: 9px;
+}
+.card__fullName {
+  font-size: 18px;
+}
+.card__info img {
+  margin-right: 5px;
+}
+.card__info span {
+  margin-bottom: 3px;
+}
+.card__show-btn {
+  margin-left: auto;
+  color: #fff;
+  width: 95px;
+  height: 21px;
+  background: #212121;
+  border-radius: 2px;
+}
+.card__show-btn p{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
 }
