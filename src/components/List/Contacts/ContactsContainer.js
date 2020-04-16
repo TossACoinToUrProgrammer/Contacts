@@ -4,6 +4,7 @@ import {
   setContacts,
   toggleIsFetching,
   toggleIsFav,
+  setSort, setSearchText 
 } from "../../../redux/contacts-reducer";
 import Contacts from "./Contacts";
 import axios from "axios";
@@ -32,12 +33,31 @@ let ContactsContainer = (props) => {
         });
     } else if (!props.contacts) {
       props.setContacts(JSON.parse(localStorage.getItem("contacts")));
+    } 
+    else{
+    let sorted1=[...props.contacts];
+    let sorted2=[...JSON.parse(localStorage.getItem("contacts"))];
+    if (    //Перерисовываем если в страничке профиля производились какие то изменения, чтобы отобразить актуальную инфу
+      JSON.stringify(
+        sorted1.sort((prev, next) => {
+          if (prev.firstName < next.firstName) return -1;
+          return 0;
+        })
+      ) !==
+      JSON.stringify(sorted2.sort((prev, next) => {
+        if (prev.firstName < next.firstName) return -1;
+        return 0;
+      })) 
+    ) {
+      props.setContacts(JSON.parse(localStorage.getItem("contacts")));
+      props.setSort(null);
+      props.setSearchText("");
     }
-  });
+  }});
   return (
     <div className="contacts">
       {props.isFetching ? <Preloader /> : null}
-      <Contacts toggleIsFav={props.toggleIsFav} contacts={props.contacts} />
+      <Contacts toggleIsFav={props.toggleIsFav} contacts={!props.sortedContacts? props.contacts : props.sortedContacts} />
     </div>
   );
 };
@@ -47,10 +67,13 @@ let mapStateToProps = (state) => {
     contacts: state.contactsPage.contacts,
     isFetching: state.contactsPage.isFetching,
     sort: state.contactsPage.sort,
+    sortedContacts:state.contactsPage.sortedContacts,
   };
 };
 export default connect(mapStateToProps, {
   setContacts,
   toggleIsFetching,
   toggleIsFav,
+  setSort,
+  setSearchText
 })(ContactsContainer);

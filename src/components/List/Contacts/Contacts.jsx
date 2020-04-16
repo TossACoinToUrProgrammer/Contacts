@@ -4,7 +4,6 @@ import NavbarContainer from "./NavbarContainer";
 
 const Contacts = (props) => {
   let contacts;
-
   if (props.contacts != null) {
     contacts = props.contacts.map((item) => (
       <ContactCard

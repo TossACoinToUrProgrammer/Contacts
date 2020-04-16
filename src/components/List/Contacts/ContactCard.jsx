@@ -5,6 +5,7 @@ import heart from "../../../img/heart.png";
 import heart2 from "../../../img/heart2.png";
 import inet from "../../../img/internet.png";
 import email from "../../../img/email.png";
+import { NavLink } from "react-router-dom";
 
 const ContactCard = ({ contact, toggleIsFav }) => {
   return (
@@ -50,9 +51,11 @@ const ContactCard = ({ contact, toggleIsFav }) => {
             {contact.email}
           </span>
         </div>
+          <NavLink to={"/profile/" + contact.id}>
         <div className="card__show-btn">
-          <p>show</p>
+           show
         </div>
+          </NavLink>
       </div>
     </div>
   );
