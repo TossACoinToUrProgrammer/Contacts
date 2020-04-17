@@ -25,6 +25,7 @@ const BasicFormSchema = Yup.object().shape({
     //Проверяем, корректный ли адрес.
     //Если нет, то выводится сообщение в скобках
     .email("Invalid email address")
+    .max(40, "Maximum 40 characters")
     //не сабмитим, если поле не заполнено
     ,
   website: Yup.string(),

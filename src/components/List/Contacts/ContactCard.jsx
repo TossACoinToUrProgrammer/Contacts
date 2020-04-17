@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 const ContactCard = ({ contact, toggleIsFav }) => {
   return (
     <div className="card">
-      <img src={contact.image} alt="ava" className="card__img" />
+      <div className="card__img-container"><img src={contact.image} alt="ava" className="card__img" /></div>
       <div className="card__info">
         <div className="card__title">
           <h3 className="card__fullName">

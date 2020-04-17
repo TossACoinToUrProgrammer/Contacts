@@ -23,6 +23,8 @@ const SignUp = ({ ava, profile, setContacts, profiles }) => {
       }
     });
     ava["ava"].current.style = "display:block";
+    if(ava['avaField'].current.value){
+    document.querySelector('.profile__img').src=ava['avaField'].current.value;}
     ava["avaField"].current.style = "display:none";
     localStorage.setItem("contacts", JSON.stringify(profilesClone));
     setContacts(profilesClone);

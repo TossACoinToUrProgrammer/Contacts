@@ -3,7 +3,6 @@
 
 
 body {
-  background-color: #dddddd;
   margin: 0;
   font-family: "Ubuntu", sans-serif;
 }
@@ -45,7 +44,7 @@ body {
 .card {
   width: 250px;
   height: 303px;
-  box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.25);
+  box-shadow: 3px 4px 3px rgba(33, 33, 33, 0.25);
   border-radius: 4px;
   margin: auto;
   margin-bottom: 42px;
@@ -54,8 +53,11 @@ body {
 .card a {
   text-decoration: none;
 }
+.card__img-container{
+    height: 134px;
+}
 .card__img {
-  height: 134px;
+  height: 100%;
   width: 100%;
 }
 .card__info {
@@ -85,11 +87,11 @@ body {
 }
 .card__info span {
   margin-bottom: 3px;
-  word-break: normal;
+  word-break: break-all;
 }
 .card__show-btn {
   margin-left: auto;
-  color: #fff;
+  
   width: 95px;
   height: 21px;
   background: #212121;
@@ -97,6 +99,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   font-weight: normal;
+  color: #fff;
 }
 .card__fav {
   width: 17px;
